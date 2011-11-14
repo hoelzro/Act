@@ -16,7 +16,7 @@ localhost):
   createdb actwiki -O act --encoding=UTF8
   createdb acttest -O act --encoding=UTF8
   bin/dbinit | psql -U act act # this will spit out some "errors"; don't worry!
-  bin/dbinit | psql -U act actest
+  bin/dbinit | psql -U act acttest
   wiki-toolkit-setupdb --type postgres --name actwiki --user act
 
 =head2 Copying over static files
@@ -31,7 +31,7 @@ templates and static files into the current directory:
 
 Now create a C<conf/act.ini> configuration file.  If you're looking for a
 quick start (which I presume you are), you can base your configuration off
-of my example here: https://gist.github.com/1163921
+of my example here: https://gist.github.com/raw/1163921
 
 =head2 Setting the environment
 
