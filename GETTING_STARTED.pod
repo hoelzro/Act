@@ -37,7 +37,7 @@ templates and static files into the current directory:
 
 Now create a C<conf/act.ini> configuration file.  If you're looking for a
 quick start (which I presume you are), you can base your configuration off
-of my example here: L<https://gist.github.com/1163921>
+of my example here: L<https://gist.github.com/raw/1163921>
 
 =head2 Setting the environment
 
