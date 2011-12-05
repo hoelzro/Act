@@ -21,7 +21,8 @@ sub handler {
         $talk->update( confirmed => 1 )
 	    if $talk->user_id == $Request{user}->user_id;
     }
-    Act::Handler::Talk::Edit::handler;
+
+    return Act::Handler::Talk::Edit::handler(@_);
 }
 
 1;
