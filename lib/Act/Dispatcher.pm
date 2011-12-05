@@ -42,6 +42,7 @@ my %private_handlers = (
     confirm_attend  => 'Act::Handler::User::ConfirmAttendance',
     editevent       => 'Act::Handler::Event::Edit',
     edittalk        => 'Act::Handler::Talk::Edit',
+    confirmtalk     => 'Act::Handler::Talk::Confirm',
     export          => 'Act::Handler::User::Export',
     export_talks    => 'Act::Handler::Talk::ExportCSV',
     ical_import     => 'Act::Handler::Talk::Import',

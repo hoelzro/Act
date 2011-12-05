@@ -4,6 +4,7 @@
 
 [% talk.title %]
 [% global.request.base_url %][% make_uri( 'edittalk', 'talk_id', talk.talk_id ) %]
+[% global.request.base_url %][% make_uri( 'confirmtalk', 'talk_id', talk.talk_id ) %]
 
 [% IF talk.lightning -%]
 {{Lightning talk}}
