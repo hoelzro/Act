@@ -912,3 +912,9 @@ msgstr "Dürfen wir Ihren Vortrag aufnehmen?"
 
 msgid "Aww, why not?"
 msgstr "Aww, wieso nicht?"
+
+msgid "Friend of Perl"
+msgstr "Freund von Perl"
+
+msgid "Future Friend of Perl"
+msgstr "Zukünftiger Freund von Perl"

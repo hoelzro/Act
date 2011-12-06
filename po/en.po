@@ -1439,3 +1439,9 @@ msgstr "May we record your talk?"
 
 msgid "Aww, why not?"
 msgstr "Aww, why not?"
+
+msgid "Friend of Perl"
+msgstr "Friend of Perl"
+
+msgid "Future Friend of Perl"
+msgstr "Future Friend of Perl"

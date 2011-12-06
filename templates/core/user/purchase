@@ -87,6 +87,7 @@ if (window.act) {
     [% END %]
 [% END %]
 [% END %]
+
 <tr>
    <td colspan="2">
       <label for="form-donation">{{Donation}}:</label>
@@ -101,6 +102,21 @@ if (window.act) {
     <td align="right"><strong><span id="totalamount">0</span></strong></td>
     <td>[% currency %]</td>
 </tr>
+
+<tr>
+    <td align="right"><input type="checkbox" value="friend-of-perl" id="friend-of-perl" name="friend-of-perl" /></td>
+    <td><label for="friend-of-perl">{{Friend of Perl}}</label></td>
+    <td align="right">250</td>
+    <td>Dollars</td>
+</tr>
+
+<tr>
+    <td align="right"><input type="checkbox" value="future-friend-of-perl" id="future-friend-of-perl" name="future-friend-of-perl" /></td>
+    <td><label for="future-friend-of-perl">{{Future Friend of Perl}}</label></td>
+    <td align="right">100</td>
+    <td>Dollars</td>
+</tr>
+
 <tr>
    <td colspan="4" align="right">
       <input type="submit" name="purchase" value="{{Buy now!}}" />
