@@ -13,7 +13,7 @@ use Act::Template::HTML;
 use Act::Util;
 
 my $form = Act::Form->new(
-    optional => [qw(donation)],
+    optional => [qw(donation friend-of-perl future-friend-of-perl)],
     constraints => {
         donation => 'numeric',
     }
@@ -100,6 +100,18 @@ sub handler
             push @items, {
                 amount => $fields->{donation},
                 name   => localize('Donation'),
+            };
+        }
+        if ($ok && $fields->{'friend-of-perl'}) {
+            push @items, {
+                amount => 250,
+                name   => localize('Friend of Perl'),
+            };
+        }
+        if ($ok && $fields->{'future-friend-of-perl'}) {
+            push @items, {
+                amount => 100,
+                name   => localize('Future Friend of Perl'),
             };
         }
         $ok = @items > 0 if $ok;
