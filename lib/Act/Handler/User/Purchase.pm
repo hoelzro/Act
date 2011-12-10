@@ -26,14 +26,15 @@ sub handler
     return Act::Util::redirect(make_uri('register'))
       unless $Request{user}->has_registered;
 
-    # shouldn't get here unless online payment is open
+    my $template = Act::Template::HTML->new();
+    
+	# shouldn't get here unless online payment is open
     unless ($Config->payment_type ne 'NONE' && $Config->payment_open) {
-        $Request{status} = 404;
+        $template->process('user/purchase_close');                      
         return;
     }
 
     $Request{r}->no_cache(1);
-    my $template = Act::Template::HTML->new();
     my ($productlist, $products) = Act::Payment::get_prices;
     my $fields;
 
