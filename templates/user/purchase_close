@@ -1,0 +1,7 @@
+[% WRAPPER ui title = loc('Conference Registration Closed') %]
+<div align="center">
+
+Conference Registration Closed You can no longer purchase a badge for this conference online. Instead, you may purchase a badge at the registration desk upon arrival.
+
+</div>
+[% END %]
