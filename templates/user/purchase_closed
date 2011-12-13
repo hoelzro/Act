@@ -1,9 +1,9 @@
 [% WRAPPER ui title = loc('Conference Registration Closed') %]
 <div align="center">
 
-<h3>Conference Registration Closed</h3>
+<h3>{{Conference Registration Closed}}</h3>
 
-You can no longer purchase a badge for this conference online. Instead, you may purchase a badge at the registration desk upon arrival.
+{{You can no longer purchase a badge for this conference online. Instead, you may purchase a badge at the registration desk upon arrival.}}
 
 </div>
 [% END %]
