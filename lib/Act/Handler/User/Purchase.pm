@@ -30,7 +30,7 @@ sub handler
     
 	# shouldn't get here unless online payment is open
     unless ($Config->payment_type ne 'NONE' && $Config->payment_open) {
-        $template->process('user/purchase_close');                      
+        $template->process('user/purchase_closed');                      
         return;
     }
 
