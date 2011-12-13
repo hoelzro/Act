@@ -1445,3 +1445,9 @@ msgstr "Friend of Perl"
 
 msgid "Future Friend of Perl"
 msgstr "Future Friend of Perl"
+
+msgid "Conference Registration Closed"
+msgstr "Conference Registration Closed"
+
+msgid "You can no longer purchase a badge for this conference online. Instead, you may purchase a badge at the registration desk upon arrival."
+msgstr "You can no longer purchase a badge for this conference online. Instead, you may purchase a badge at the registration desk upon arrival."
