@@ -889,6 +889,9 @@ msgstr "Abrechnung"
 msgid "Delayed payment"
 msgstr "verbindlich anmelden"
 
+msgid "Sorry, registration for this conference has been closed."
+msgstr "Tut mir leid, die Anmeldung für diese Konferenz wurde geschlossen."
+
 msgid "Login with Facebook"
 msgstr "Bei Facebook Anmelden"
 
