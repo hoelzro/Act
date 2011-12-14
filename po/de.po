@@ -927,3 +927,6 @@ msgstr "Konferenz Anmeldung Geschlossen"
 
 msgid "You can no longer purchase a badge for this conference online. Instead, you may purchase a badge at the registration desk upon arrival."
 msgstr "Sie dürfen nicht mehr ein Schild für diese Konferenz online kaufen.  Sie müssen stattdessen ein Schild am Anmeldungstisch kaufen."
+
+msgid "Spouses Program"
+msgstr "Ehemann / Ehefrau Programm"
