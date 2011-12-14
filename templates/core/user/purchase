@@ -118,6 +118,13 @@ if (window.act) {
 </tr>
 
 <tr>
+    <td align="right"><input type="checkbox" value="spouses-program" id="spouses-program" name="spouses-program" /></td>
+    <td><label for="spouses-program">{{Spouses Program}}</label></td>
+    <td align="right">100</td>
+    <td>Dollars</td>
+</tr>
+
+<tr>
    <td colspan="4" align="right">
       <input type="submit" name="purchase" value="{{Buy now!}}" />
    </td>
