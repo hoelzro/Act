@@ -1,3 +1,6 @@
 /META.yml
 /Makefile
 /inc
+static
+conf
+/var

@@ -145,34 +145,34 @@ msgid "You can:"
 msgstr "You can:"
 
 msgid "purchase your conference ticket"
-msgstr "purchase your conference ticket"
+msgstr "Purchase your conference ticket"
 
 msgid "confirm your participation"
-msgstr "confirm your participation"
+msgstr "Confirm your participation"
 
 msgid "register for this conference"
-msgstr "register for this conference"
+msgstr "Register for this conference"
 
 msgid "update your information"
-msgstr "update your information"
+msgstr "Update your information"
 
 msgid "manage your photo"
-msgstr "manage your photo"
+msgstr "Manage your photo"
 
 msgid "change your password"
-msgstr "change your password"
+msgstr "Change your password"
 
 msgid "see your talks (accepted talks are shown in bold type)"
-msgstr "see your talks (accepted talks are shown in <b>bold</b> type)"
+msgstr "See your talks (accepted talks are shown in <b>bold</b> type)"
 
 msgid "submit a talk"
-msgstr "submit a talk"
+msgstr "Submit a talk"
 
 msgid "log out"
-msgstr "log out"
+msgstr "Log out"
 
 msgid "unregister from <this conference>"
-msgstr "unregister from %1"
+msgstr "Remove participation in %1"
 
 msgid "(You were there)"
 msgstr "(You were there)"
@@ -224,7 +224,7 @@ msgid "Identifier is already in use. Please choose another."
 msgstr "Identifier %1 is already in use. Please choose another."
 
 msgid "The address is already registered."
-msgstr "The address %1 is already registered."
+msgstr "The address %1 is already in use."
 
 msgid "Your identifier must contain at least 3 characters"
 msgstr "Your identifier must contain at least 3 characters and only contain alphanumeric characters (<tt>[a-zA-Z0-9_]</tt>)"
@@ -291,15 +291,18 @@ msgstr ""
 "create. If so, simply check the corresponding radio button, and\n"
 "submit this form.\n"
 
-msgid "Register"
-msgstr "Register"
+msgid "Home"
+msgstr "Home"
 
-msgid "Registered!"
+msgid "Register"
+msgstr "Create Profile"
+
+msgid "Profile Complete!"
 msgstr "Registered!"
 
 msgid "Congratulations, you are now registered"
 msgstr ""
-"Congratulations, <b>%1</b>, you are now registered.\n"
+"Congratulations, <b>%1</b>, your profile is complete.\n"
 "Your password is <b>%2</b> .\n"
 
 msgid "First Name"
@@ -315,7 +318,7 @@ msgid "Join!"
 msgstr "Join!"
 
 msgid "edit"
-msgstr "edit"
+msgstr "Edit"
 
 msgid "min"
 msgstr "min"
@@ -471,7 +474,7 @@ msgstr "Join"
 
 msgid "To register to the <name> conference"
 msgstr ""
-"To register to the %1 conference,\n"
+"To confirm participation in the %1 conference,\n"
 "simply push the button below.\n"
 
 msgid "The recognised rights are:"
@@ -553,7 +556,7 @@ msgid "6 or more"
 msgstr "6 or more"
 
 msgid "people (who will not attend the conference)"
-msgstr "people (who will not attend the conference)"
+msgstr "People (who will not attend the conference)"
 
 msgid "T-shirt size"
 msgstr "T-shirt size"
@@ -668,7 +671,7 @@ msgstr "%1 Statistics"
 
 msgid "There are n registered people"
 msgstr ""
-"There are %1 registered people\n"
+"There are %1 confirmed participants\n"
 "coming from %quant(%2,country,countries)\n"
 "and %quant(%3,monger group).\n"
 "There are %4 committed users,\n"
@@ -711,11 +714,11 @@ msgstr "Un-Registration"
 
 msgid "To unregister from <conference>,"
 msgstr ""
-"To unregister from %1,\n"
+"To decline participation in %1,\n"
 "simply push the button below.\n"
 
 msgid "Unregister from <conference>"
-msgstr "Unregister from %1"
+msgstr "Decline participation in %1"
 
 msgid "Submit/Edit a non-talk event"
 msgstr "Submit/Edit a non-talk event"
@@ -860,7 +863,7 @@ msgid "by"
 msgstr "by"
 
 msgid "new page"
-msgstr "new page"
+msgstr "New page"
 
 msgid "Home"
 msgstr "Home"
@@ -1153,7 +1156,7 @@ msgid "New time"
 msgstr "New time"
 
 msgid "title"
-msgstr "title"
+msgstr "Title"
 
 msgid "Upload an iCal file"
 msgstr "Upload an iCal file"
@@ -1198,10 +1201,10 @@ msgid "No track"
 msgstr "No track"
 
 msgid "lightning"
-msgstr "lightning"
+msgstr "Lightning"
 
 msgid "from"
-msgstr "from"
+msgstr "From"
 
 msgid "Comment:"
 msgstr "Comment:"
@@ -1334,30 +1337,29 @@ msgid "Tags:"
 msgstr "Tags:"
 
 msgid "add new tags:"
-msgstr "add new tags:"
+msgstr "Add new tags:"
 
 msgid "To unregister <name> from <conference>,"
 msgstr ""
-"To unregister <b>%1 %2</b> from %3,\n"
+"To remove participant <b>%1 %2</b> from %3,\n"
 "simply push the button below.\n"
 
 msgid "Unregister <name> from <conference>"
-msgstr "Unregister %1 %2 from %3"
+msgstr "Remove participant %1 %2 from %3"
 
 msgid "unregister"
-msgstr "unregister"
+msgstr "Decline Participation"
 
 msgid "edit payment"
-msgstr "edit payment"
+msgstr "Edit payment"
 
 msgid "view invoice"
-msgstr "view invoice"
-
+msgstr "View invoice" 
 msgid "create invoice"
-msgstr "create invoice"
+msgstr "Create invoice"
 
 msgid "enter payment"
-msgstr "enter payment"
+msgstr "Enter payment"
 
 msgid "Your purchases"
 msgstr "Your purchases"
@@ -1366,10 +1368,10 @@ msgid "Your <conf> order #<id>"
 msgstr "Your %1 order #%2"
 
 msgid "make additional purchases"
-msgstr "make additional purchases"
+msgstr "Make additional purchases"
 
 msgid "view all orders and invoices"
-msgstr "view all orders and invoices"
+msgstr "View all orders and invoices"
 
 msgid "Product"
 msgstr "Product"
@@ -1384,10 +1386,10 @@ msgid "Promotion code"
 msgstr "Promotion code"
 
 msgid "add to personal schedule"
-msgstr "add to personal schedule"
+msgstr "Add to personal schedule"
 
 msgid "remove from personal schedule"
-msgstr "remove from personal schedule"
+msgstr "Remove from personal schedule"
 
 msgid "Attended by:"
 msgstr "Attended by:"
@@ -1411,7 +1413,7 @@ msgid "Unknown order ID."
 msgstr "Unknown order ID."
 
 msgid "User is not registered."
-msgstr "User is not registered."
+msgstr "User is not a participant."
 
 msgid "Sorry, registration for this conference has been closed."
 msgstr "Sorry, registration for this conference has been closed."
