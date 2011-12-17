@@ -52,7 +52,8 @@
 
     <ul class="main-menu">
     <li><h2><a href="[% make_uri('') %]">Home</a></h2> </li>
-    <li><h2><a href="[% make_uri('login') %]">Login / Register</a></h2> </li>
+    <li><h2><a href="[% make_uri('login') %]">{{Login}}</a></h2> </li>
+    <li><h2><a href="[% make_uri('register') %]">{{Register}}</a></h2> </li>
 
     </ul>
 

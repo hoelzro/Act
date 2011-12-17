@@ -13,7 +13,7 @@ use Act::Template::HTML;
 use Act::Util;
 
 my $form = Act::Form->new(
-    optional => [qw(donation friend-of-perl future-friend-of-perl)],
+    optional => [qw(donation friend-of-perl future-friend-of-perl spouses-program)],
     constraints => {
         donation => 'numeric',
     }
@@ -26,14 +26,15 @@ sub handler
     return Act::Util::redirect(make_uri('register'))
       unless $Request{user}->has_registered;
 
-    # shouldn't get here unless online payment is open
+    my $template = Act::Template::HTML->new();
+    
+	# shouldn't get here unless online payment is open
     unless ($Config->payment_type ne 'NONE' && $Config->payment_open) {
-        $Request{status} = 404;
+        $template->process('user/purchase_closed');                      
         return;
     }
 
     $Request{r}->no_cache(1);
-    my $template = Act::Template::HTML->new();
     my ($productlist, $products) = Act::Payment::get_prices;
     my $fields;
 
@@ -112,6 +113,12 @@ sub handler
             push @items, {
                 amount => 100,
                 name   => localize('Future Friend of Perl'),
+            };
+        }
+        if ($ok && $fields->{'spouses-program'}) {
+            push @items, {
+                amount => 100,
+                name   => localize('Spouses Program'),
             };
         }
         $ok = @items > 0 if $ok;

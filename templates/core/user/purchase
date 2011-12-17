@@ -105,14 +105,21 @@ if (window.act) {
 
 <tr>
     <td align="right"><input type="checkbox" value="friend-of-perl" id="friend-of-perl" name="friend-of-perl" /></td>
-    <td><label for="friend-of-perl">{{Friend of Perl}}</label></td>
+    <td><label for="friend-of-perl"><a href="http://www.yapcna.org/sponsorship/levels-of-sponsorship#idGGisuanB0ZI6CVm3W914Gg">{{Friend of Perl}}</a></label></td>
     <td align="right">250</td>
     <td>Dollars</td>
 </tr>
 
 <tr>
     <td align="right"><input type="checkbox" value="future-friend-of-perl" id="future-friend-of-perl" name="future-friend-of-perl" /></td>
-    <td><label for="future-friend-of-perl">{{Future Friend of Perl}}</label></td>
+    <td><label for="future-friend-of-perl"><a href="http://www.yapcna.org/sponsorship/levels-of-sponsorship#idDthsrvIAXVjW8wPd3Mt44w">{{Future Friend of Perl}}</a></label></td>
+    <td align="right">100</td>
+    <td>Dollars</td>
+</tr>
+
+<tr>
+    <td align="right"><input type="checkbox" value="spouses-program" id="spouses-program" name="spouses-program" /></td>
+    <td><label for="spouses-program">{{Spouses Program}}</label></td>
     <td align="right">100</td>
     <td>Dollars</td>
 </tr>

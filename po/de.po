@@ -889,6 +889,9 @@ msgstr "Abrechnung"
 msgid "Delayed payment"
 msgstr "verbindlich anmelden"
 
+msgid "Sorry, registration for this conference has been closed."
+msgstr "Tut mir leid, die Anmeldung für diese Konferenz wurde geschlossen."
+
 msgid "Login with Facebook"
 msgstr "Bei Facebook Anmelden"
 
@@ -918,3 +921,12 @@ msgstr "Freund von Perl"
 
 msgid "Future Friend of Perl"
 msgstr "Zukünftiger Freund von Perl"
+
+msgid "Conference Registration Closed"
+msgstr "Konferenz Anmeldung Geschlossen"
+
+msgid "You can no longer purchase a badge for this conference online. Instead, you may purchase a badge at the registration desk upon arrival."
+msgstr "Sie dürfen nicht mehr ein Schild für diese Konferenz online kaufen.  Sie müssen stattdessen ein Schild am Anmeldungstisch kaufen."
+
+msgid "Spouses Program"
+msgstr "Ehemann / Ehefrau Programm"
