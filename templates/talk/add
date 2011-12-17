@@ -1,5 +1,16 @@
 [% WRAPPER ui title = loc("Submit/Edit a talk") %]
 
+<script type="text/javascript">
+	$( function(){
+		$('#record_talk_ok').change( function() {
+			if ( this.checked )
+				$('#opt_out_reason_row').hide();
+			else
+				$('#opt_out_reason_row').show();
+		});
+	});
+</script>
+
 <center>
 
 [% PROCESS error
@@ -219,14 +230,14 @@
   <td align="right" valign="top">{{May we record your talk?}}</td>
   <td>&nbsp;</td>
   <td>
-    <input type="checkbox" id="record_talk_ok" name="record_talk_ok" checked />
+    <input type="checkbox" id="record_talk_ok" name="record_talk_ok" [% 'checked' UNLESS opt_out_reason %]/>
   </td>
 </tr>
-<tr id="opt_out_reason_row" style="display: none">
+<tr id="opt_out_reason_row" [% UNLESS opt_out_reason %]style="display: none"[% END %]>
   <td align="right" valign="top">{{Aww, why not?}}</td>
   <td>&nbsp;</td>
   <td>
-    <input type="text" name="opt_out_reason" size="51" maxlength="100" />
+    <input type="text" name="opt_out_reason" size="51" maxlength="100" value='[% opt_out_reason %]'/>
   </td>
 </tr>
 <tr>
@@ -239,18 +250,5 @@
 
 </form>
 </center>
-
-<script type="text/javascript">
-    // XXX do this later with jQuery
-    // I don't have time to figure out
-    // how to delay this for when it's loaded
-    (function() {
-        var record_talk_ok = document.getElementById('record_talk_ok');
-        record_talk_ok.onchange = function() {
-            var opt_out_reason_row = document.getElementById('opt_out_reason_row');
-            opt_out_reason_row.style.display = record_talk_ok.checked ? 'none' : '';
-        };
-    })();
-</script>
 
 [% END %]

@@ -4,9 +4,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="[% make_uri_info('css', 'act-base.css') %]" />
 <link rel="stylesheet" type="text/css" href="http://static.ak.fbcdn.net/rsrc.php/v1/yT/r/AYyvcDopffd.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 [% IF title %]<title>[% title  %]</title>[% END %]
 <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="generator" content="WebGUI 7.10.23" /><meta http-equiv="Content-Script-Type" content="text/javascript" /><meta http-equiv="Content-Style-Type" content="text/css" /><script type="text/javascript">function getWebguiProperty (propName) {var props = new Array();props["extrasURL"] = "/extras/";props["pageURL"] = "/conference2";props["firstDayOfWeek"] = "0";return props[propName];}</script><link href="/layout.css" rel="stylesheet" type="text/css" /><!--page layout--><meta http-equiv="Cache-Control" content="must-revalidate" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="generator" content="Bluefish 1.0.7"/><meta http-equiv="Content-Script-Type" content="text/javascript" /><meta http-equiv="Content-Style-Type" content="text/css" /><script type="text/javascript">function getWebguiProperty (propName) {var props = new Array();props["extrasURL"] = "/extras/";props["pageURL"] = "/conference2";props["firstDayOfWeek"] = "0";return props[propName];}</script><link href="/layout.css" rel="stylesheet" type="text/css" /><!--page layout--><meta http-equiv="Cache-Control" content="must-revalidate" />
 
   <link rel="stylesheet" href="http://www.yapcna.org/root/import/yapc::na/site.css" type="text/css" media="all" />
  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
@@ -130,7 +131,6 @@
   </div>
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
   <script type="text/javascript" src="http://www.yapcna.org/root/import/yapc::na/hoverintent.js"></script>
   <script type="text/javascript" src="http://www.yapcna.org/root/import/yapc::na/superfish.js"></script>
   <script type="text/javascript">
