@@ -99,7 +99,8 @@ sub handler {
         my @errors;
 
         if($Request{args}{record_talk_ok} eq 'on') {
-            delete @{ $Request{args} }{qw/record_talk_ok opt_out_reason/};
+            delete $Request{args}{record_talk_ok};
+            $Request{args}{opt_out_reason} = '';
         }
 
         # validate form fields
