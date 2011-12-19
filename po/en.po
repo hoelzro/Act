@@ -298,7 +298,7 @@ msgid "Register"
 msgstr "Create Profile"
 
 msgid "Profile Complete!"
-msgstr "Registered!"
+msgstr "Profile Complete!"
 
 msgid "Congratulations, you are now registered"
 msgstr ""
