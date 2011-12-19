@@ -145,31 +145,31 @@ msgid "You can:"
 msgstr "You can:"
 
 msgid "purchase your conference ticket"
-msgstr "Purchase your conference ticket"
+msgstr "purchase your conference ticket"
 
 msgid "confirm your participation"
-msgstr "Confirm your participation"
+msgstr "confirm your participation"
 
 msgid "register for this conference"
-msgstr "Register for this conference"
+msgstr "register for this conference"
 
 msgid "update your information"
-msgstr "Update your information"
+msgstr "update your information"
 
 msgid "manage your photo"
-msgstr "Manage your photo"
+msgstr "manage your photo"
 
 msgid "change your password"
-msgstr "Change your password"
+msgstr "change your password"
 
 msgid "see your talks (accepted talks are shown in bold type)"
-msgstr "See your talks (accepted talks are shown in <b>bold</b> type)"
+msgstr "see your talks (accepted talks are shown in <b>bold</b> type)"
 
 msgid "submit a talk"
-msgstr "Submit a talk"
+msgstr "submit a talk"
 
 msgid "log out"
-msgstr "Log out"
+msgstr "log out"
 
 msgid "unregister from <this conference>"
 msgstr "Remove participation in %1"
@@ -318,7 +318,7 @@ msgid "Join!"
 msgstr "Join!"
 
 msgid "edit"
-msgstr "Edit"
+msgstr "edit"
 
 msgid "min"
 msgstr "min"
@@ -556,7 +556,7 @@ msgid "6 or more"
 msgstr "6 or more"
 
 msgid "people (who will not attend the conference)"
-msgstr "People (who will not attend the conference)"
+msgstr "people (who will not attend the conference)"
 
 msgid "T-shirt size"
 msgstr "T-shirt size"
@@ -863,7 +863,7 @@ msgid "by"
 msgstr "by"
 
 msgid "new page"
-msgstr "New page"
+msgstr "new page"
 
 msgid "Home"
 msgstr "Home"
@@ -1156,7 +1156,7 @@ msgid "New time"
 msgstr "New time"
 
 msgid "title"
-msgstr "Title"
+msgstr "title"
 
 msgid "Upload an iCal file"
 msgstr "Upload an iCal file"
@@ -1201,10 +1201,10 @@ msgid "No track"
 msgstr "No track"
 
 msgid "lightning"
-msgstr "Lightning"
+msgstr "lightning"
 
 msgid "from"
-msgstr "From"
+msgstr "from"
 
 msgid "Comment:"
 msgstr "Comment:"
@@ -1337,7 +1337,7 @@ msgid "Tags:"
 msgstr "Tags:"
 
 msgid "add new tags:"
-msgstr "Add new tags:"
+msgstr "add new tags:"
 
 msgid "To unregister <name> from <conference>,"
 msgstr ""
@@ -1351,15 +1351,16 @@ msgid "unregister"
 msgstr "Decline Participation"
 
 msgid "edit payment"
-msgstr "Edit payment"
+msgstr "edit payment"
 
 msgid "view invoice"
-msgstr "View invoice" 
+msgstr "view invoice"
+
 msgid "create invoice"
-msgstr "Create invoice"
+msgstr "create invoice"
 
 msgid "enter payment"
-msgstr "Enter payment"
+msgstr "enter payment"
 
 msgid "Your purchases"
 msgstr "Your purchases"
@@ -1368,10 +1369,10 @@ msgid "Your <conf> order #<id>"
 msgstr "Your %1 order #%2"
 
 msgid "make additional purchases"
-msgstr "Make additional purchases"
+msgstr "make additional purchases"
 
 msgid "view all orders and invoices"
-msgstr "View all orders and invoices"
+msgstr "view all orders and invoices"
 
 msgid "Product"
 msgstr "Product"
@@ -1386,10 +1387,10 @@ msgid "Promotion code"
 msgstr "Promotion code"
 
 msgid "add to personal schedule"
-msgstr "Add to personal schedule"
+msgstr "add to personal schedule"
 
 msgid "remove from personal schedule"
-msgstr "Remove from personal schedule"
+msgstr "remove from personal schedule"
 
 msgid "Attended by:"
 msgstr "Attended by:"
