@@ -52,7 +52,12 @@
 
     <ul class="main-menu">
     <li><h2><a href="[% make_uri('') %]">{{Home}}</a></h2> </li>
+    [% IF global.request.user -%]
+    <li><h2><a href="[% make_uri('change') %]">[% global.request.user.full_name -%]</a></h2></li>
+    <li><h2><a href="[% make_uri('logout') %]">{{Logout}}</a></h2> </li>
+    [% ELSE -%]
     <li><h2><a href="[% make_uri('login') %]">{{Login}}</a></h2> </li>
+    [% END -%]
 
     </ul>
 
