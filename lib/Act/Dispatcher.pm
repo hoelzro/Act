@@ -160,7 +160,20 @@ sub _handler_app {
         my $subhandler = $1;
     }
     _load($handler);
-    return $handler->new(subhandler => $subhandler);
+    my $app = $handler->new(subhandler => $subhandler);
+
+    if($ENV{'ACTDEBUG'}) {
+        return sub {
+            my ( $env ) = @_;
+
+            my $errors = $env->{'psgi.errors'};
+            $errors->print("Dispatching to $handler\n");
+
+            return $app->($env);
+        };
+    } else {
+        return $app;
+    }
 }
 
 sub _load {
