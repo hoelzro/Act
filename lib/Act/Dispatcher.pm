@@ -157,7 +157,7 @@ sub _handler_app {
     my $handler = shift;
     my $subhandler;
     if ($handler =~ s/::(\w*handler)$//) {
-        my $subhandler = $1;
+        my $subhandler = $1; # XXX is this a bug or not?
     }
     _load($handler);
     my $app = $handler->new(subhandler => $subhandler);
