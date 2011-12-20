@@ -58,6 +58,8 @@
 
 </form>
 
+<p>[% loc('No account?', make_uri('register')) %]</p>
+
 <p>[% loc('Forgot your password?', make_uri('changepwd')) %]</p>
 
 <p>

@@ -1457,3 +1457,6 @@ msgstr "You can no longer purchase a badge for this conference online. Instead, 
 
 msgid "Spouses Program"
 msgstr "Spouses Program"
+
+msgid "No account?"
+msgstr "No account? Register <a href=\"%1\">here</a>."

@@ -930,3 +930,6 @@ msgstr "Sie dürfen nicht mehr ein Schild für diese Konferenz online kaufen.  S
 
 msgid "Spouses Program"
 msgstr "Ehemann / Ehefrau Programm"
+
+msgid "No account?"
+msgstr "Kein Konto? Sie können sich <a href=\"%1\">hier</a> anmelden:"
