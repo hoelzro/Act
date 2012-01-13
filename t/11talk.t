@@ -1,4 +1,4 @@
-use Test::More tests => 21;
+use Test::More tests => 22;
 use strict;
 use t::Util;
 use Act::Talk;
@@ -14,8 +14,8 @@ my $user2 = Act::User->new( login => 'echo' );
 my ( $talks, $talk, $talk1, $talk2, $talk3 );
 
 # manually insert a talk
-my $sth = $Request{dbh}->prepare_cached("INSERT INTO talks (user_id,conf_id,duration,lightning,accepted,confirmed) VALUES(?,?,?,?,?,?);");
-$sth->execute( $user->user_id, 'conf', 12, 'f', 'f', 'f' );
+my $sth = $Request{dbh}->prepare_cached("INSERT INTO talks (user_id,conf_id,duration,lightning,accepted,confirmed,room) VALUES(?,?,?,?,?,?,?);");
+$sth->execute( $user->user_id, 'conf', 12, 'f', 'f', 'f', 'foo room' );
 $sth->finish();
 
 $sth = $Request{dbh}->prepare_cached("SELECT * from talks WHERE user_id=?");
@@ -47,6 +47,7 @@ $talk2 = Act::Talk->create(
    accepted  => 1,
    confirmed => 'false',
    datetime  => $date,
+   room      => 'bar room',
 );
 isa_ok( $talk2, 'Act::Talk' );
 isa_ok( $talk2->datetime, 'DateTime' );
@@ -88,6 +89,7 @@ $talk3 = Act::Talk->create(
    lightning => 'FALSE',
    accepted  => 1,
    confirmed => 0,
+   room      => 'foo room',
 );
 
 # search method
@@ -97,6 +99,8 @@ $talks = Act::Talk->get_talks( lightning => 'TRUE' );
 is_deeply( $talks, [ $talk2 ], "lightning talks" );
 $talks = Act::Talk->get_talks( user_id => $user->user_id );
 is_deeply( $talks, [ $talk1, $talk3 ], "Got the user's talks" );
+$talks = Act::Talk->get_talks( room => 'foo room' );
+is_deeply( $talks, [ $talk1, $talk3 ], "Got the room's talks" );
 
 # this a Act::User method that encapsulate get_talks
 $talks = $user->talks;

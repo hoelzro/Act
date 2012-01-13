@@ -25,6 +25,7 @@ use Act::Handler::Talk::ExportMyIcal;
 use Act::Handler::Talk::Favorites;
 use Act::Handler::Talk::Import;
 use Act::Handler::Talk::List;
+use Act::Handler::Talk::ListByRoom;
 use Act::Handler::Talk::MySchedule;
 use Act::Handler::Talk::Schedule;
 use Act::Handler::Talk::Show;
