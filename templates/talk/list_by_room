@@ -1,0 +1,28 @@
+[% IF tag; title = loc("List of talks tagged <tag>", tag);
+   ELSE;   title = loc("List of talks");
+   END;
+   WRAPPER ui title = title %]
+<div align="center">
+<p>
+ [% IF talks_total == 0 %]
+ {{No talks for this room on this date.}}
+ [% ELSE %]
+ {{Talks:}} [% talks_total %]<br />
+ {{Room:}} [% room %]<br />
+ {{Date:}} [% date.ymd('-') %]<br />
+ [% END %]
+</p>
+
+[% IF talks.size;
+     first = 0;
+     FOREACH tr = talks;
+       UNLESS first;
+         first = 1 %]
+         <h2>{{Tracks}}</h2>
+         <ul>
+       [% END %]
+       <li><a href="#[% tr.talk_id %]">[% tr.title %]</a>
+        ([% tr.datetime.strftime( '%I:%M %p' ) %])</li>
+     [% END; IF first %]</ul>[% END %]
+[% END %]
+[% END %]

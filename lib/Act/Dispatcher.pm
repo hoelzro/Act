@@ -21,6 +21,7 @@ my %public_handlers = (
     events          => 'Act::Handler::Event::List',
     faces           => 'Act::Handler::User::Faces',
     favtalks        => 'Act::Handler::Talk::Favorites',
+    list_by_room    => 'Act::Handler::Talk::ListByRoom',
     login           => 'Act::Handler::Login',
     news            => 'Act::Handler::News::List',
     openid          => 'Act::Handler::OpenID',
