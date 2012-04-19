@@ -110,20 +110,8 @@ sub conference_app {
         enable sub {
             my $app = shift;
             sub {
-                my ( $env ) = @_;
-
-                for ( $env->{'PATH_INFO'} ) {
-                    if( m{^/$} ) {
-                        my $req = Plack::Request->new($env);
-                        my $uri = $req->uri . 'main';
-
-                        return [
-                            302,
-                            [ Location => $uri ],
-                            [],
-                        ];
-                    }
-                    elsif ( /\.html$/ ) {
+                for ( $_[0]->{'PATH_INFO'} ) {
+                    if ( s{^/?$}{index.html} || /\.html$/ ) {
                         return $static_app->(@_);
                     }
                     else {
