@@ -10,6 +10,7 @@ use Plack::App::File;
 use Act::Config;
 use Act::Handler::Static;
 use Act::Util;
+use Act::Middleware::Language;
 
 # main dispatch table
 my %public_handlers = (
@@ -74,7 +75,6 @@ my %private_handlers = (
 
 sub to_app {
     Act::Config::reload_configs();
-    my $conference_app = conference_app();
     my $app = builder {
         enable sub {
             my $app = shift;
@@ -82,75 +82,57 @@ sub to_app {
                 my $env = shift;
                 my $req = Plack::Request->new($env);
                 $env->{'act.base_url'} = $req->base->as_string;
-                $env->{'act.dbh'} = Act::Util::db_connect();
                 $app->($env);
             };
         };
+        my $first_conf;
         my %confr = %{ $Config->uris }, map { $_ => $_ } %{ $Config->conferences };
-        for my $uri ( keys %confr ) {
-            my $conference = $confr{$uri};
-            mount "/$uri/" => sub {
-                my $env = shift;
-                $env->{'act.conference'} = $conference;
-                $env->{'act.config'} = Act::Config::get_config($conference);
-                $conference_app->($env);
-            };
+        for my $uri ( sort keys %confr ) {
+            my $conf_app = conference_app($confr{$uri});
+            $first_conf ||= $conf_app;
+            mount "/$uri/" => $conf_app;
         }
-        mount "/" => sub {
-            [404, [], []];
-        };
+        mount '/' => $first_conf
+            || sub { [404, ['Content-Type' => 'text/plain'], ['no conferences configured']] };
     };
     return $app;
 }
 
 sub conference_app {
+    my $conference = shift;
+    my $config = Act::Config::get_config($conference);
+
     my $static_app = Act::Handler::Static->new;
-    builder {
-        enable '+Act::Middleware::Language';
-        enable sub {
-            my $app = shift;
-            sub {
-                for ( $_[0]->{'PATH_INFO'} ) {
-                    if ( s{^/?$}{index.html} || /\.html$/ ) {
-                        return $static_app->(@_);
-                    }
-                    else {
-                        return $app->(@_);
-                    }
-                }
-            };
-        };
-        Plack::App::Cascade->new( catch => [99], apps => [
-            builder {
-                # XXX ugly, but functional for now
-                enable sub {
-                    my ( $app ) = @_;
 
-                    return sub {
-                        my ( $env ) = @_;
-
-                        my $res = $app->($env);
-                        $res->[0] = 99 if $res->[0] == 404;
-                        return $res;
-                    };
-                };
-                Plack::App::File->new(root => $Config->general_root)->to_app;
-            },
-            builder {
-                enable '+Act::Middleware::Auth';
-                for my $uri ( keys %public_handlers ) {
-                    mount "/$uri" => _handler_app($public_handlers{$uri});
-                }
-                mount '/' => sub { [99, [], []] };
-            },
-            builder {
-                enable '+Act::Middleware::Auth', private => 1;
-                for my $uri ( keys %private_handlers ) {
-                    mount "/$uri" => _handler_app($private_handlers{$uri});
-                }
-                mount '/' => sub { [404, [], []] };
+    my $app = Plack::App::Cascade->new( catch => [99], apps => [
+        sub {
+            $_[0]->{'PATH_INFO'} =~ /\.html?$/ && goto &$static_app;
+            return [99, [], []];
+        },
+        builder {
+            enable '+Act::Middleware::Auth';
+            for my $uri ( keys %public_handlers ) {
+                mount "/$uri" => _handler_app($public_handlers{$uri});
             }
-        ] );
+            mount '/' => sub { [99, [], []] };
+        },
+        builder {
+            enable '+Act::Middleware::Auth', private => 1;
+            for my $uri ( keys %private_handlers ) {
+                mount "/$uri" => _handler_app($private_handlers{$uri});
+            }
+            mount '/' => sub { [99, [], []] };
+        },
+        Plack::App::File->new(root => $config->general_root)->to_app,
+    ] );
+    $app = Act::Middleware::Language->wrap($app);
+    return sub {
+        $_[0]->{'act.conference'} = $conference;
+        $_[0]->{'act.config'} = my $config = Act::Config::get_config($conference);
+        $_[0]->{'act.dbh'} = Act::Util::db_connect();
+        $_[0]->{'act.conf_base_url'} = $_[0]->{'SCRIPT_NAME'};
+        $_[0]->{'PATH_INFO'} =~ s{^/?$}{ '/' . $config->general_default_page }e;
+        goto &$app;
     };
 }
 
@@ -158,7 +140,7 @@ sub _handler_app {
     my $handler = shift;
     my $subhandler;
     if ($handler =~ s/::(\w*handler)$//) {
-        my $subhandler = $1; # XXX is this a bug or not?
+        $subhandler = $1;
     }
     _load($handler);
     my $app = $handler->new(subhandler => $subhandler);
