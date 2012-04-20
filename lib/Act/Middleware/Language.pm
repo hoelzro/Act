@@ -16,6 +16,9 @@ sub call {
 
     my $language;
 
+    # failsafe
+    $env->{'psgix.session'}->{'act'} = {} unless exists $env->{'psgix.session'}->{'act'};
+
     # check session
     my $s = $env->{'psgix.session'}{'act'};
     if ($s && $s->{language} && $langs->{$s->{language}}) {
@@ -27,6 +30,7 @@ sub call {
     my $force_language = $req->param('language');
     if ($force_language && $langs->{$force_language} ) {
         $language = $s->{language} = $force_language;
+
         my $uri = $req->uri;
         my @query = $uri->query_form;
         for (my $i; $i < @query; $i+=2 ) {
@@ -65,6 +69,9 @@ sub call {
 
     # remember it for this request
     $env->{'act.language'} = $language;
+
+    # make sure whatever was picked last, it stays in the session
+    $s->{'language'} = $language;
 
     # fetch localization handle
     $env->{'act.loc'} = Act::I18N->get_handle($language);

@@ -1,0 +1,69 @@
+[general]
+conferences = FIX_ME FIX_ME_TOO AND_ME
+cookie_name = act
+searchlimit = 20
+dir_photos  = photos
+dir_ttc     = var/
+max_imgsize = 320x200
+root        = $(home)/wwwdocs/
+default_language = en
+languages = pt es en
+timezone = America/Chicago
+default_country = US
+
+[bcrypt]
+cost = 5
+salt = FIX_ME_FIX_ME_FI
+
+[database]
+name        = act
+dsn         = dbi:Pg:dbname=FIX_ME;host=FIX_ME
+user        = FIX_ME
+passwd      = FIX_ME
+dump_file   = /FIX_ME/path/to/act_dump.sql
+pg_dump     = /usr/bin/pg_dump
+test_dsn    = dbi:Pg:dbname=FIX_ME;host=FIX_ME
+test_user   = FIX_ME
+test_passwd = FIX_ME
+
+
+[email]
+sendmail    = /usr/sbin/sendmail
+test        = 0
+sender_address = FIX_ME@FIX.ME
+
+[wiki]
+dbname      = FIX_ME
+dbuser      = FIX_ME
+dbpass      = FIX_ME
+dbhost      = FIX_ME
+dbport      = FIX_ME
+
+[payment]
+open      = 0
+invoices  = 0
+type        = Fake
+
+[payment_type_Fake]
+plugin = Fake
+notify_bcc  = FIX_ME@FIX.ME
+
+[flickr]
+# see http://www.flickr.com/services/api/
+apikey  = FIX_ME_FIX_ME_FIX_ME_FIX_ME_FIX_
+
+
+[talks]
+durations = 20 40 60
+start_date = 2011-07-01 00:00:00
+end_date   = 2012-07-01 00:00:00
+submissions_open = 1
+
+[rooms]
+rooms = room1 room2
+room1 = Room 1
+room2 = Room 2
+
+[registration]
+open = 1
+max_attendees = 5000

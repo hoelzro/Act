@@ -106,6 +106,7 @@ sub to_app {
 sub conference_app {
     my $static_app = Act::Handler::Static->new;
     builder {
+        enable '+Act::Middleware::Auth';
         enable '+Act::Middleware::Language';
         enable sub {
             my $app = shift;
