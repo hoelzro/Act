@@ -16,7 +16,7 @@ sub new
     return Wiki::Toolkit->new(
         store     => Act::Wiki::Store->new(charset => 'UTF-8',
                                            map { $_ => $Config->get("wiki_$_") }
-                                           qw(dbname dbuser dbpass)),
+                                           qw(dbname dbuser dbpass dbhost dbport)),
         formatter => Act::Wiki::Formatter->new(),
     );
 }
