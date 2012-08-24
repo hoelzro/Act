@@ -81,6 +81,11 @@
        AND global.request.user.has_registered %]
         <li><a href="[% make_uri('newtalk') %]">{{submit a talk}}</a><br /></li>
     [% END %]
+    [% IF global.request.user.has_registered %]
+       <li><a href="[% make_uri('myschedule') %]">view your personal schedule</a></li>
+    [% END %]
+    <li><a href="[% make_uri('schedule') %]">view the conference schedule</a></li>
+    <li><a href="[% make_uri('wiki') %]">view/edit the conference wiki</a></li>
     <li><a href="[% make_uri('logout') %]">{{log out}}</a></li>
     [% IF can_unregister %]
     <li><a href="[% make_uri('unregister') %]">[% loc("unregister from <this conference>", global.conference.name) %]</a></li>

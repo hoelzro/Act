@@ -21,7 +21,10 @@ sub call {
         path_info   => $req->path_info,
         base_url    => $env->{'act.base_url'},
         conference  => $env->{'act.conference'},
-        args        => { map { scalar $_ => decode_utf8($req->param($_)) } $req->param },
+        args        => {
+            (map {; $_ => decode_utf8(scalar $req->param($_)) } $req->param),
+            (map {; $_ => $req->uploads->{$_}->filename } keys %{ $req->uploads }),
+        },
         language    => $env->{'act.language'},
         loc         => Act::I18N->get_handle($env->{'act.language'}),
         user        => $env->{'act.user'},

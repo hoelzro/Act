@@ -61,7 +61,7 @@
        IF day == d %]
          <strong>[% date %]</strong>
        [% ELSE %]
-         <a href="[% global.request.r.uri %]?day=[% d %]">[% date %]</a>
+         <a href="?day=[% d %]">[% date %]</a>
        [% END %]
        [% " | " UNLESS loop.last %]
      [% END %]

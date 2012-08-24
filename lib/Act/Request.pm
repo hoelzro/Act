@@ -56,8 +56,48 @@ sub send_http_header {
 
 sub upload {
     my ( $self ) = @_;
+    my $uploads = $self->uploads;
+    if (wantarray) {
+        my @uploads = map { Act::Upload->new($_, $uploads->{$_}) } keys %$uploads;
+        return @uploads;
+    }
+    my ($name) = keys %$uploads;
+    return Act::Upload->new($name, $uploads->{$name});
+}
 
-    # XXX returned value must support fh method (return psgi.input? but that only supports readline...)
+{
+    package Act::Upload;
+    sub new {
+        my $class = shift;
+        my $name = shift;
+        my $upload = shift;
+        my $self = bless {
+            name => $name,
+            path => $upload->path,
+            filename => $upload->filename,
+            size => $upload->size,
+            info => {},
+            type => $upload->content_type,
+        }, $class;
+        return $self;
+    }
+
+    sub name { $_[0]->{name} }
+    sub filename { $_[0]->{filename} }
+    sub size { $_[0]->{size} }
+    sub info { die "unimplemented" }
+    sub type { $_[0]->{type} }
+    sub tempname { $_[0]->{path} }
+    sub link { die "unimplemented" }
+    sub next { die "unimplemented" }
+    sub fh {
+        my $self = shift;
+        my $fh = $self->{fh};
+        return $fh if $fh;
+        open $fh, '<', $self->{path};
+        $self->{fh} = $fh;
+        return $fh;
+    }
 }
 
 1;
